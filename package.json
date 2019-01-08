@@ -50,7 +50,7 @@
     "react-syntax-highlight": "0.0.2",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.14.1"
+    "webpack-dev-server": "^3.1.11"
   },
   "peerDependencies": {
     "react": "^15.2.1",

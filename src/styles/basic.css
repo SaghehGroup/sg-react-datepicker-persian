@@ -155,16 +155,14 @@
   color: #ffffff;
 }
 .heading {
-    text-align: left;
+    text-align: center;
 }
 
 .heading span:first-child {
-    float: right;
     width: auto !important;
 }
 
 .heading button:first-child {
-    float: right;
     width: auto !important;
     border-radius: 50px !important;
     border: 1px solid #007bff !important;

@@ -11,7 +11,7 @@ var plugins = [
   })
 ];
 
-if (process.env.NODE_ENV !== 'development') {
+if (process.env.NODE_ENV !== 'dev') {
   plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 

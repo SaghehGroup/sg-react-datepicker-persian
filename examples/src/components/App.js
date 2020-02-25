@@ -29,7 +29,7 @@ export default class App extends Component {
           مشاهده در گیت‌هاب
         </a>
         <div className={styles.jumbotron}>
-          <h1>React Persian Date Picker</h1>
+          <h1>SG React Persian Date Picker</h1>
           <p>
             پروژه‌ای از <a href="https://evand.ir">ایوند</a>
           </p>

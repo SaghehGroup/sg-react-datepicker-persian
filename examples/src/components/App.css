@@ -1,12 +1,12 @@
 :local(.jumbotron) {
-  background-color: #216ba5;
-  color: #dedede;
-  text-align: center;
-  padding: 20px;
+  color           : #eeeeee;
+  text-align      : center;
+  padding         : 20px;
+  background-image: linear-gradient( 135deg, #6B73FF 10%, #000DFF 100%);
 }
 
 :local(.jumbotron) a {
-  color: #fff;
+  color          : #fff;
   text-decoration: none;
 }
 

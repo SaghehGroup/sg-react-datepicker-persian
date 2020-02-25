@@ -1,6 +1,6 @@
 {
   "name": "sg-react-datepicker-persian",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Used react-persian-datepicker",
   "main": "./lib/index.js",
   "directories": {

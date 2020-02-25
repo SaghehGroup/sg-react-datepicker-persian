@@ -154,28 +154,30 @@
   background-color: #337ab7;
   color: #ffffff;
 }
+
+
 .heading {
-    text-align: center;
+  text-align: center;
 }
 
 .heading span:first-child {
-    width: auto !important;
+  float: right;
+  width: auto !important;
 }
 
 .heading button:first-child {
-    width: auto !important;
-    border-radius: 50px !important;
-    border: 1px solid #007bff !important;
-    color: #007bff;
-    padding: 0 0.7rem;
+  width: auto !important;
+  border-radius: 50px !important;
+  border: 1px solid #007bff !important;
+  color: #007bff;
+  padding: 0 0.7rem;
 }
 
 .calendarContainer.dayWrapper:not(.currentMonth) button {
-    opacity: .8 !important;
+  opacity: .8 !important;
 }
 
 .calendarContainer.selected button:focus {
-    background-color: #0077f6 !important;
-    color: #ffffff;
+  background-color: #0077f6 !important;
+  color: #ffffff;
 }
-

@@ -1,13 +1,12 @@
-# React Persian Date Picker :calendar:
+# React Persian Date Picker :calendar::love:
 
-[![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/6104558/repos/43522564)
-
-[Persian calendar](https://en.wikipedia.org/wiki/Solar_Hijri_calendar) and date picker components for [React](https://facebook.github.io/react/). This is an open source project made in [@evandhq](https://github.com/evandhq) team.
+[Persian calendar](https://en.wikipedia.org/wiki/Solar_Hijri_calendar) and date picker components for [React](https://facebook.github.io/react/). This is an open source project made in [@evandhq](https://github.com/evandhq) team and custom made by [@SaghehGroup](https://github.com/SaghehGroup).
 
 [See the demo.](https://evandhq.github.io/react-persian-datepicker)
 
 <p dir="rtl">
 <strong>React Persian Date Picker</strong> مجموعه‌ای از کامپوننت‌های ReactJS مورد نیاز جهت ایجاد ورود و نمایش تاریخ هجری شمسی است. این نرم‌افزار متن‌باز در ایوند توسعه یافته‌است.
+و توسط گروه ساقه شخصی سازی گردیده
 </p>
 
 <p dir="rtl">

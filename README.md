@@ -11,6 +11,7 @@
 و توسط گروه ساقه شخصی سازی گردیده
 </p>
 
+![alt text](https://github.com/SaghehGroup/sg-react-datepicker-persian/blob/master/doc/calendar.jpg "calendar")
 <p dir="rtl">
   <a href="https://evandhq.github.io/react-persian-datepicker">نسخه نمایشی را اینجا ببینید.</a>
 </p>
@@ -33,21 +34,31 @@ Below is a basic example.
 ```es6
 import React from 'react';
 import { Calendar, DatePicker } from 'react-persian-datepicker';
+const calendarStyles = {
+    calendarContainer: 'calendarContainer',
+    dayPickerContainer: 'dayPickerContainer',
+    monthsList: 'monthsList',
+    daysOfWeek: 'daysOfWeek',
+    dayWrapper: 'dayWrapper',
+    selected: 'selected',
+    heading: 'heading'
+}
 
 const MyComponent = () => (
   <div>
     <div>
       {/* Calendar Component */}
-      <Calendar />
+      <Calendar calendarStyles />
     </div>
     
     <div>
       {/* Date Picker Component */}
-      <DatePicker />
+      <DatePicker calendarStyles />
     </div>
   </div>
 );
 ```
+
 # API Documentation
 This documentation is for **v3.0.2**. if you are using another version, you may update this file and make a PR. Contributions are totally welcomed ;)
 
@@ -64,7 +75,7 @@ render () {
   return <DatePicker />;
 }
 ```
-For more examples please visit [github page](https://evandhq.github.io/react-persian-datepicker/) or see `examples/` directory.
+For more examples please visit [github page](https://github.com/SaghehGroup/sg-react-datepicker-persian) or see `examples/` directory.
 
 ### Options
 

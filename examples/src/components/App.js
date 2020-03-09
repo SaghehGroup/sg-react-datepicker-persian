@@ -15,6 +15,7 @@ const generateRandomMoment = () => {
 export default class App extends Component {
   state = {
     value: moment(),
+    disabled: true,
     someValue: new moment()
   };
 
@@ -23,7 +24,7 @@ export default class App extends Component {
       <div>
         <a
           className="github-fork-ribbon"
-          href="https://github.com/evandhq/react-persian-datepicker"
+          href="https://github.com/SaghehGroup/sg-react-datepicker-persian"
           title="مشاهده در گیت‌هاب"
         >
           مشاهده در گیت‌هاب
@@ -32,14 +33,16 @@ export default class App extends Component {
           <h1>SG React Persian Date Picker</h1>
           <p>
             پروژه‌ای از <a href="https://evand.ir">ایوند</a>
+            ویرایش شده توسط <a href="https://saghehgroup.ir">گروه ساقه</a>
           </p>
           <p>
-            <a href="https://github.com/evandhq/react-persian-datepicker" className="btn">
+            <a href="https://github.com/SaghehGroup/sg-react-datepicker-persian" className="btn">
               دریافت پروژه
             </a>
           </p>
         </div>
         <div className={styles.examples}>
+
           <div>
             <Example
               title="ورودی تاریخ ساده"
@@ -58,7 +61,7 @@ export default class App extends Component {
                 onChange={value => this.setState({ someValue: value })}
               />
               <div style={{ paddingTop: 15 }}>
-                <button onClick={() => this.setState({ someValue: null }) }>
+                <button onClick={() => this.setState({ someValue: null })}>
                   حذف مقدار
                 </button>
               </div>
@@ -74,7 +77,7 @@ export default class App extends Component {
                 onChange={value => this.setState({ value })}
               />
               <div style={{ paddingTop: 15 }}>
-                <button onClick={() => this.setState({ value: generateRandomMoment() }) }>
+                <button onClick={() => this.setState({ value: generateRandomMoment() })}>
                   مقدار تصادفی
                 </button>
               </div>
@@ -89,16 +92,36 @@ export default class App extends Component {
               <DatePicker
                 timePickerComponent={MyTimePicker}
                 inputFormat="jYYYY/jM/jD hh:mm A"
+                value={this.state.value}
+                disabled={this.state.disabled}
+                onChange={value => this.setState({ value })}
+              />
+              <div style={{ paddingTop: 15 }}>
+                <button onClick={() => this.setState({ value: generateRandomMoment() })}>
+                  مقدار تصادفی
+                </button>
+              </div>
+
+              <div style={{ paddingTop: 15, paddingLeft: 15 }}>
+                <button onClick={() => this.setState({ disabled: !this.state.disabled })}>
+                  {this.state.disabled ? "فعال" : "غیر فعال"}
+                </button>
+              </div>
+            </Example>
+          </div>
+          <div>
+            <Example
+              title="محدوده تاریخ"
+              description={`کمترین تاریخ مجاز ${moment().subtract(10, 'days').format("jYYYY/jM/jD")} ، بیشترین تاریخ مجاز ${moment().add(50, 'days').format("jYYYY/jM/jD")}`}
+              code={dateTimePickerRangeCode}
+            >
+              <DatePicker
+                inputFormat="jYYYY/jM/jD"
                 min={moment().subtract(10, 'days')}
                 max={moment().add(50, 'days')}
                 value={this.state.value}
                 onChange={value => this.setState({ value })}
               />
-              <div style={{ paddingTop: 15 }}>
-                <button onClick={() => this.setState({ value: generateRandomMoment() }) }>
-                  مقدار تصادفی
-                </button>
-              </div>
             </Example>
           </div>
           <div>
@@ -164,6 +187,24 @@ const dateTimePickerCode = `render() {
   );
 };`;
 
+
+const dateTimePickerRangeCode = `render() {
+  return (
+    <div>
+      <DatePicker
+        timePickerComponent={MyTimePicker}
+        inputFormat="jYYYY/jM/jD hh:mm A"
+        value={this.state.value}
+        min={moment().subtract(10, 'days')}
+        max={moment().add(50, 'days')}
+        onChange={value => this.setState({ value })}
+      />
+      <button onClick={() => this.setState({ value: generateRandomMoment() })}>
+        مقدار تصادفی
+      </button>
+    </div>
+  );
+};`;
 const basicExampleCode = `render() {
   return <Calendar />;
 };`;

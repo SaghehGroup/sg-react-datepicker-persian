@@ -1,6 +1,6 @@
 {
   "name": "sg-react-datepicker-persian",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Used react-persian-datepicker",
   "main": "./lib/index.js",
   "directories": {
@@ -10,7 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "SET NODE_ENV=dev && webpack-dev-server --hot --inline --content-base ./examples",
-    "webpack": "SET NODE_ENV=production && webpack",
+    "webpack": "SET NODE_ENV=production webpack",
     "babel": "babel src --out-dir lib --ignore /examples && cp src/styles lib -rf"
   },
   "repository": {

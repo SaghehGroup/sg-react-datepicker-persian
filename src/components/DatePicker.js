@@ -22,11 +22,13 @@ export default class DatePicker extends Component {
     removable: PropTypes.bool,
     timePickerComponent: PropTypes.func,
     calendarStyles: PropTypes.object,
+    disabled: PropTypes.bool,
     calendarContainerProps: PropTypes.object
   };
 
   static defaultProps = {
     inputFormat: 'jYYYY/jM/jD',
+    disabled: false,
     calendarStyles: require('../styles/basic.css'),
     calendarContainerProps: {}
   };
@@ -36,10 +38,13 @@ export default class DatePicker extends Component {
       let value = this.props.value;
       let inputFormat = this.props.inputFormat;
       inputValue = value.format(inputFormat);
+      this.setState({ inputValue });
     }
+
   }
   state = {
     isOpen: false,
+    disabled: this.props.disabled,
     momentValue: this.props.defaultValue || null,
     inputValue: this.props.defaultValue ?
       this.props.defaultValue.format(this.props.inputFormat) : ''
@@ -50,9 +55,10 @@ export default class DatePicker extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if ('value' in nextProps && nextProps.value !== this.props.value) {
+    if ('value' in nextProps && nextProps.value !== this.props.value)
       this.setMomentValue(nextProps.value);
-    }
+    if ('disabled' in nextProps && nextProps.disabled !== this.props.disabled)
+      this.setState({ disabled: nextProps.disabled });
   }
 
   setMomentValue(momentValue) {
@@ -86,8 +92,6 @@ export default class DatePicker extends Component {
     if (momentValue) {
       const inputValue = momentValue.format(inputFormat);
       this.setState({ inputValue });
-    } else {
-      this.setState({ inputValue });
     }
 
   }
@@ -115,12 +119,17 @@ export default class DatePicker extends Component {
   }
 
   handleInputChange(event) {
-    const { inputFormat } = this.props;
+    const { inputFormat, min, max } = this.props;
     const inputValue = event.target.value;
     const momentValue = moment(inputValue, inputFormat);
 
     if (momentValue.isValid()) {
-      this.setState({ momentValue });
+      if ((min && momentValue.isBefore(min)) || (max && momentValue.isAfter(max))) {
+        this.setState({ inputValue: "", momentValue: null });
+        return;
+      }
+      else
+        this.setState({ momentValue });
     }
 
     this.setState({ inputValue });
@@ -133,7 +142,7 @@ export default class DatePicker extends Component {
   }
 
   renderInput() {
-    let { isOpen, inputValue } = this.state;
+    let { isOpen, inputValue, disabled } = this.state;
 
     const className = classnames(this.props.className, {
       [outsideClickIgnoreClass]: isOpen
@@ -145,7 +154,7 @@ export default class DatePicker extends Component {
           className={className}
           type="text"
           ref="input"
-          disabled={this.props.disabled}
+          disabled={disabled}
           onFocus={this.handleFocus.bind(this)}
           onBlur={this.handleBlur.bind(this)}
           onChange={this.handleInputChange.bind(this)}

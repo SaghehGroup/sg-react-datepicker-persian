@@ -13,7 +13,7 @@
 
 ![alt text](https://github.com/SaghehGroup/sg-react-datepicker-persian/blob/master/doc/calendar.jpg "calendar")
 <p dir="rtl">
-  <a href="https://evandhq.github.io/react-persian-datepicker">نسخه نمایشی را اینجا ببینید.</a>
+  <a href="https://SaghehGroup.github.io/react-persian-datepicker">نسخه نمایشی را اینجا ببینید.</a>
 </p>
 
 # Installation

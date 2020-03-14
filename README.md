@@ -3,7 +3,7 @@
 [Persian calendar](https://en.wikipedia.org/wiki/Solar_Hijri_calendar) and date picker components for [React](https://facebook.github.io/react/). This is an open source project made in [@evandhq](https://github.com/evandhq) team and custom made by [@SaghehGroup](https://github.com/SaghehGroup).
 :calendar: with :heart:
 
-[See the demo.](https://evandhq.github.io/react-persian-datepicker)
+[See the demo.](https://saghehgroup.github.io/sg-react-datepicker-persian/)
 
  
 <p dir="rtl">
@@ -12,9 +12,7 @@
 </p>
 
 ![alt text](https://github.com/SaghehGroup/sg-react-datepicker-persian/blob/master/doc/calendar.jpg "calendar")
-<p dir="rtl">
-  <a href="https://SaghehGroup.github.io/react-persian-datepicker">نسخه نمایشی را اینجا ببینید.</a>
-</p>
+
 
 # Installation
 

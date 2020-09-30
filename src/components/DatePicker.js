@@ -89,9 +89,11 @@ export default class DatePicker extends Component {
       onBlur(event);
     }
 
+    //onBlur call onChange func from parent props
     if (momentValue) {
-      const inputValue = momentValue.format(inputFormat);
-      this.setState({ inputValue });
+      this.setMomentValue(momentValue);
+      // const inputValue = momentValue.format(inputFormat);
+      // this.setState({ inputValue });
     }
 
   }
